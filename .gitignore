@@ -1,0 +1,16 @@
+# OS
+.DS_STORE
+.DS_STORE?
+desktop.ini
+Thumbs.db
+
+# Editor
+.idea/
+*.swp
+*.swo
+.vscode
+.vs/
+*~
+
+# Build
+target/
