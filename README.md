@@ -1,6 +1,6 @@
 ## What is the Fragment Engine?
 
-The Fragment Engine is a modular game engine made for (platform) fighting games.
+The Fragment Engine is a modular game engine made for fighting games.
 
 What does this mean ? This means that by itself, it does nothing, you need to add [Shards](#shards) to
 make up a Gem (Pronounced [ɡeɪm])
@@ -10,6 +10,22 @@ make up a Gem (Pronounced [ɡeɪm])
 Shards are community packages that make up a Gem, a shard can be anything from
 characters, maps, game features, and other assets (At least that's the objective).
 
+## Progress
+Source code
+---
+- [ ] Rendering
+  - [ ] Window initialization
+  - [ ] Sprites rendering
+  - [ ] Models rendering
+- [ ] Plugins
+  - [ ] Plugin detection
+  - [ ] Plugin loading
+  - [ ] Plugin types
+    - [ ] UI
+    - [ ] Playables
+    - [ ] Rules
+  - [ ] WASM Bindings
+  
 ## Goals
 
 - [ ] Modular: Anything can be added through Shards
