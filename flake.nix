@@ -25,6 +25,7 @@
       {
         devShells.default = pkgs.mkShell {
           buildInputs = with pkgs; [
+            pre-commit
             rust-analyzer
             rust-bin.stable.latest.default
           ];
