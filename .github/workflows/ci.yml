@@ -1,0 +1,35 @@
+name: Fragment's CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  format:
+    name: Run code checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: rustup toolchain install stable --profile minimal --component rustfmt clippy --no-self-update
+      - uses: Swatinem/rust-cache@v2
+      - name: Cargo format
+        run: cargo fmt --check
+      - name: Cargo clippy
+        run: cargo clippy
+  # build:
+  #   name: Build for Windows, Linux
+  #   needs: [format]
+  #   strategy:
+  #     matrix:
+  #       os: [ubuntu-latest, windows-latest]
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - run: rustup toolchain install stable --profile minimal --component rustc --no-self-update
+  #     - run: rustup update ${{ matrix.toolchain }} && rustup default ${{ matrix.toolchain }}
+  #     - uses: Swatinem/rust-cache@v2
+  #     - run: cargo build --verbose
